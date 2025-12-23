@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {FaUserPlus} from "react-icons/fa";
 
 export default function QueueForm({ onAdd }) {
     const [name, setName] = useState("");
@@ -32,6 +33,10 @@ export default function QueueForm({ onAdd }) {
                         <option value ="Support">Support</option>
                     </select>
                 </div>
+                <button type="submit">
+                    <FaUserPlus /> 
+                    Add to Queue
+                </button>
             </form>
         </div>
     )
