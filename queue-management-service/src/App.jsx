@@ -6,7 +6,7 @@ export default function App() {
   const [queue, setQueue] = useState([]);
 
   const addToQueue = (item) => {
-    setQueue([...queue, { ...item, status: "waiting" }]);
+    setQueue([...queue, { ...item, id: Date.now(), status: "waiting" }]);
   };
   
   const removeFromQueue = (index) => {
