@@ -9,16 +9,16 @@ export default function App() {
     setQueue([...queue, { ...item, id: Date.now(), status: "waiting" }]);
   };
   
-  const removeFromQueue = (index) => {
-    setQueue(queue.filter((_, i) => i !== index));
+  const removeFromQueue = (id) => {
+    setQueue(queue.filter(item => item.id !== id));
   };
 
-  const updateStatus = (index, newStatus) => {
-    const newQueue = [...queue];
-    if (newQueue[index]) {
-      newQueue[index].status = newStatus;
-      setQueue(newQueue);
-    }
+  const updateStatus = (id, newStatus) => {
+    setQueue(
+      queue.map((item) =>
+        item.id === id ? { ...item, status: newStatus } : item
+      )
+    );
   };
 
   return(
